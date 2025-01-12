@@ -7,66 +7,72 @@
 
         // Regular expression for validating TikTok URL
         
-        document.getElementById('searchButton').addEventListener('click', function() {
-            const urlInput = document.getElementById('url');
-            const url = urlInput.value;
-            const resultsContainer = document.querySelector('.resultsContainer');
-            const errorMessage = document.querySelector('.errorMessage');
+        // Event listener untuk tombol download
+document.getElementById('searchButton').addEventListener('click', function () {
+    const urlInput = document.getElementById('url');
+    const url = urlInput.value;
+    const resultsContainer = document.querySelector('.resultsContainer');
+    const errorMessage = document.querySelector('.errorMessage');
 
-        if (url.trim() === '') {
- resultsContainer.style.display = 'none';
- errorMessage.style.display = 'block';
- return;
- } else {
- errorMessage.style.display = 'none';
- 
-                fetch(`https://website-restapii.vercel.app/tiktokdll?url=${url}&key=farisofc`)
-                    .then(response => response.json())
-                    .then(tik => {
-                        // Set video details
-document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;   
-                     document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.author.nickname}`;
-                        document.getElementById('videoDescription').textContent = `Description: ${tik.result.data.title}`;
+    if (url.trim() === '') {
+        resultsContainer.style.display = 'none';
+        errorMessage.style.display = 'block';
+        return;
+    } else {
+        errorMessage.style.display = 'none';
 
-                        // Show and resize the thumbnail
-                        const thumbnail = tik.result.data.author.avatar;
-                        const videoThumbnail = document.getElementById('videoThumbnail');
-                        videoThumbnail.src = thumbnail;
-                        videoThumbnail.style.display = 'block';
+        fetch(`https://website-restapii.vercel.app/tiktokdll?url=${url}&key=farisofc`)
+            .then(response => response.json())
+            .then(tik => {
+                // Tampilkan detail video
+                document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;
+                document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.author.nickname}`;
+                document.getElementById('videoDescription').textContent = `Description: ${tik.result.data.title}`;
 
-                        // Set video player
-                        const videoPlayer = document.getElementById('videoPlayer');
-                        videoPlayer.src = tik.result.data.hdplay;
-                        videoPlayer.style.display = 'block';
-                        videoPlayer.load();
-                        videoPlayer.play();
+                // Tampilkan thumbnail
+                const thumbnail = tik.result.data.author.avatar;
+                const videoThumbnail = document.getElementById('videoThumbnail');
+                videoThumbnail.src = thumbnail;
+                videoThumbnail.style.display = 'block';
 
-                        // Set download links
-                       // Trigger Autodownload (MP4 Video)
-                const downloadVideo = document.getElementById('downloadButton');
-                downloadVideo.click();  // Simulasi klik untuk unduhan otomatis video
-                
-                // Optional: Trigger Autodownload (MP3 Audio)
-                const downloadAudio = document.getElementById('downloadAudioButton');
-                downloadAudio.click();  // Simulasi klik untuk unduhan otomatis audio
+                // Tampilkan audio title di atas tombol download audio
+                const audioTitle = document.getElementById('audioTitle');
+                audioTitle.textContent = `Audio Title: ${tik.result.data.music_info.title} by ${tik.result.data.music_info.author}`;
 
- document.getElementById('downloadButton').href = tik.result.data.hdplay;
+                // Video player
+                const videoPlayer = document.getElementById('videoPlayer');
+                videoPlayer.src = tik.result.data.hdplay;
+                videoPlayer.style.display = 'block';
 
-const mp3Title = tik.result.data.music_info.title;
-                document.getElementById('mp3Title').style.display = 'block';
-                document.getElementById('mp3Title').textContent = `Download MP3: ${mp3Title}`;
-                document.getElementById('downloadImageButton').addEventListener('click', function() {
-    const thumbnail = document.getElementById('videoThumbnail');
-    const imageUrl = tik.result.data.origin_cover; // Mendapatkan URL gambar
+                // Tambahkan event listener untuk tombol download video
+                document.getElementById('downloadVideoButton').addEventListener('click', function () {
+                    const downloadVideo = document.createElement('a');
+                    downloadVideo.href = tik.result.data.hdplay;
+                    downloadVideo.download = `tiktok-video.mp4`;
+                    downloadVideo.click();
+                });
 
-    // Membuat elemen link sementara untuk mengunduh gambar
-    const link = document.createElement('a');
-    link.href = imageUrl;
-    link.download = 'tiktok-thumbnail.jpg'; // Menentukan nama file gambar
-    link.click(); // Menjalankan download
-});
-                                        document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;                   
-                    });
+                // Tambahkan event listener untuk tombol download audio
+                document.getElementById('downloadAudioButton').addEventListener('click', function () {
+                    const downloadAudio = document.createElement('a');
+                    downloadAudio.href = tik.result.data.music_info.play;
+                    downloadAudio.download = `tiktok-audio.mp3`;
+                    downloadAudio.click();
+                });
+
+                // Tambahkan event listener untuk tombol download thumbnail
+                document.getElementById('downloadImageButton').addEventListener('click', function () {
+                    const downloadImage = document.createElement('a');
+                    downloadImage.href = tik.result.data.origin_cover;
+                    downloadImage.download = `tiktok-thumbnail.jpg`;
+                    downloadImage.click();
+                });
+
                 resultsContainer.style.display = 'block';
-            }
-        });
+            })
+            .catch(error => {
+                console.error(error);
+                errorMessage.style.display = 'block';
+            });
+    }
+});
