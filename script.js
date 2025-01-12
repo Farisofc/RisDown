@@ -36,21 +36,22 @@ document.getElementById('Region').textContent = `Region: ${tik.result.data.regio
 
                         // Set video player
                         const videoPlayer = document.getElementById('videoPlayer');
-                        videoPlayer.src = tik.result.data.hdplay;
+                        videoPlayer.src = tik.result.data.play;
                         videoPlayer.style.display = 'block';
                         videoPlayer.load();
                         videoPlayer.play();
 
                         // Set download links
                        // Trigger Autodownload (MP4 Video)
+                document.getElementById('downloadButton').href = tik.result.data.play;
                 const downloadVideo = document.getElementById('downloadButton');
                 downloadVideo.click();  // Simulasi klik untuk unduhan otomatis video
                 
                 // Optional: Trigger Autodownload (MP3 Audio)
+                document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;
                 const downloadAudio = document.getElementById('downloadAudioButton');
                 downloadAudio.click();  // Simulasi klik untuk unduhan otomatis audio
 
- document.getElementById('downloadButton').href = tik.result.data.hdplay;
 
 const mp3Title = tik.result.data.music_info.title;
                 document.getElementById('mp3Title').style.display = 'block';
@@ -64,8 +65,7 @@ const mp3Title = tik.result.data.music_info.title;
     link.href = imageUrl;
     link.download = 'tiktok-thumbnail.jpg'; // Menentukan nama file gambar
     link.click(); // Menjalankan download
-});
-                                        document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;                   
+});                   
                     });
                 resultsContainer.style.display = 'block';
             }
