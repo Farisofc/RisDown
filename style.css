@@ -1,0 +1,267 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+         max-width: 500px;
+         background: #fff; 
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+         border-radius: 15px; 
+         padding: 30px; 
+         margin: 50px auto; /* Margin lebih besar untuk memberi jarak atas dan bawah */ 
+         opacity: 0; 
+         transform: translateY(50px); 
+         animation: fadeIn 1s ease-out 0.5s forwards; 
+         }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1,
+        h2 {
+            font-weight: 600;
+            color: #5e60ce;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #5e60ce;
+            margin-right: 10px;
+        }
+
+        .about-section p,
+      .contact-section {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* Animasi saat tombol ditekan */
+.btn:active {
+    transform: scale(0.95); /* Membuat tombol sedikit mengecil saat ditekan */
+    transition: transform 0.2s ease;
+}
+
+.contact-section h2 {
+    color: #5e60ce;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-list li a {
+    color: #5e60ce;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-list li a:hover {
+    color: #4d50a6;
+    text-decoration: underline;
+}
+
+
+.contact-list li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+/* Animasi ketika elemen disentuh atau diklik */
+.touchable {
+    transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
+}
+
+.touchable:active {
+    transform: scale(0.95); /* Menciutkan elemen sedikit saat ditekan */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan saat ditekan */
+}
+
+/* Efek pada link atau tombol */
+.contact-list li a, 
+#searchButton, 
+#downloadButton, 
+#downloadAudioButton {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efek ketika link atau tombol disentuh */
+.contact-list li a:active,
+#searchButton:active,
+#downloadButton:active,
+#downloadAudioButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Opsional: Tambahkan efek hover agar lebih menarik */
+.contact-list li a:hover,
+#searchButton:hover,
+#downloadButton:hover,
+#downloadAudioButton:hover {
+    color: #4d50a6;
+    transform: scale(1.05); /* Sedikit membesar saat hover */
+}
+
+
+.icon {
+    font-size: 20px;
+    color: #5e60ce;
+    margin-right: 10px;
+}
+
+
+       .faris-brand {
+    position: fixed;
+    top: 10px;
+    left: 15px; /* Geser ke kiri */
+    font-size: 18px;
+    color: #5e60ce;
+    font-weight: bold;
+    font-style: italic;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #5e60ce;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .dark-mode {
+            background-color: #2d2f3a;
+            color: #f1f1f1;
+        }
+
+        .dark-mode .btn-primary {
+            background-color: #1e2a47;
+        }
+
+        .dark-mode .input-group-text {
+            background-color: #1e2a47;
+        }
+
+        .dark-mode .container {
+            background: #495057;
+        }
+
+        .toggle-btn {
+            background-color: #5e60ce;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #4d50a6;
+        }
+
+        .input-group input,
+        .input-group .input-group-text {
+            border-radius: 25px;
+        }
+
+        .download-btn a {
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-align: center;
+            background-color: #5e60ce;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn a:hover {
+            background-color: #4d50a6;
+        }
+
+        .resultsContainer .card-body {
+            text-align: center;
+        }
+
+    #videoThumbnail {
+    width: 120px;  /* Ukuran lebih kecil */
+    height: 120px; /* Membuat gambar berbentuk lingkaran */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+        h3 {
+            margin-top: 10px;
+        }
+        /* Efek hover untuk link di footer */
+.nav-link {
+    color: #5e60ce;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #4d50a6;
+    text-decoration: underline;
+    transform: translateY(-3px); /* Efek gerakan sedikit ke atas saat dihover */
+}
+
+/* Animasi saat section About atau Contact diklik */
+.about-section, .contact-section {
+    transition: transform 0.3s ease;
+}
+
+.about-section:target, .contact-section:target {
+    transform: scale(1.05); /* Memberikan efek pembesaran ketika section dituju */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.fab.fa-tiktok {
+font-size: 24px; 
+color: #000; /* Warna ikon */ 
+margin-right: 10px; /* Memberi jarak dengan teks */
+}
+ .fab.fa-tiktok:hover { 
+ color: #69c9d0; /* Warna ikon saat hover */ }p
