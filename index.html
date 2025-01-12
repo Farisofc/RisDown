@@ -36,10 +36,15 @@
                 <h3 id="videoAuthor"></h3>
                 <h3 id="videoDescription"></h3>
                 <video controls id="videoPlayer" style="width: 100%; display: none;"></video>
-                <div class="download-btn">
-                    <a href="#" download id="downloadButton" class="btn btn-primary">Download (MP4)</a>
-                    <a href="#" download id="downloadAudioButton" class="btn btn-primary">Download (MP3)</a>
-                    <a href="#" download id="downloadImageButton" class="btn btn-primary">Download Image</a> <!-- Tombol Download Foto -->
+              <div class="download-options">
+    <h4 style="text-align: center; color: #5e60ce; margin-top: 20px;">Pilih File untuk Diunduh:</h4>
+    <button id="downloadVideoButton" class="btn btn-primary" style="margin: 10px; border-radius: 30px;">Download Video</button>
+    <div id="audioTitle" style="text-align: center; margin: 10px; font-weight: bold; color: #3c4048;"></div>
+    <button id="downloadAudioButton" class="btn btn-primary" style="margin: 10px; border-radius: 30px;">Download Audio</button>
+    <button id="downloadImageButton" class="btn btn-primary" style="margin: 10px; border-radius: 30px;">Download Thumbnail</button>
+
+</div>
+
     <p id="mp3Title" style="display: none; font-size: 14px; color: #5e60ce; margin-top: 10px;">Download MP3</p>
                 </div>
             </div>
