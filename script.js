@@ -41,13 +41,13 @@ document.getElementById('searchButton').addEventListener('click', function () {
 
                 // Video player
                 const videoPlayer = document.getElementById('videoPlayer');
-                videoPlayer.src = tik.result.data.hdplay;
+                videoPlayer.src = tik.result.data.play;
                 videoPlayer.style.display = 'block';
 
                 // Tambahkan event listener untuk tombol download video
                 document.getElementById('downloadVideoButton').addEventListener('click', function () {
                     const downloadVideo = document.createElement('a');
-                    downloadVideo.href = tik.result.data.hdplay;
+                    downloadVideo.href = tik.result.data.play;
                     downloadVideo.download = `Snaptikris.mp4`;
                 });
 
