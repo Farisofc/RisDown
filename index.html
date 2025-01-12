@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Tiktok Downloader">
+    <meta name="copyright" content="Tiktok Downloader - Faris">
+    <meta name="author" content="Tiktok Downloader - Faris">
+    <link href="" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Tiktok Downloader - Faris</title>
+</head>
+
+<body>
+    <div class="faris-brand">Faris</div>
+    <div class="container">
+        <div class="tiktok">
+            <i class="fab fa-tiktok"></i>
+            <h1>Tiktok Downloader</h1>
+            <button class="toggle-btn" id="toggleButton">🌙</button>
+        </div>
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-link"></i></span>
+            <input type="text" id="url" class="form-control" placeholder="Masukkan URL video...">
+        </div>
+        <button id="searchButton" class="btn btn-primary" style="border-radius: 30px;">Download</button>
+
+        <div class="resultsContainer card" style="display: none;">
+            <div class="card-body">
+                <img id="videoThumbnail" src="" alt="Thumbnail" style="display: none;">
+                <h3 id="Region"></h3>
+                <h3 id="videoAuthor"></h3>
+                <h3 id="videoDescription"></h3>
+                <video controls id="videoPlayer" style="width: 100%; display: none;"></video>
+                <div class="download-btn">
+                    <a href="#" download id="downloadButton" class="btn btn-primary">Download (MP4)</a>
+                    <a href="#" download id="downloadAudioButton" class="btn btn-primary">Download (MP3)</a>
+                    <a href="#" download id="downloadImageButton" class="btn btn-primary">Download Image</a> <!-- Tombol Download Foto -->
+    <p id="mp3Title" style="display: none; font-size: 14px; color: #5e60ce; margin-top: 10px;">Download MP3</p>
+                </div>
+            </div>
+        </div>
+        <p class="errorMessage" style="color: red; display: none;">Masukkan URL TikTok yang valid!</p>
+    </div>
+
+         <!-- About Section -->
+ <div id="about" class="about-section container">
+     <h2>About</h2>
+     <b>
+         Tiktok Downloader adalah alat sederhana dan cepat untuk mengunduh video TikTok tanpa watermark. 
+         Alat ini dikembangkan oleh Faris,<b>dengan tujuan mempermudah pengguna mengunduh video favorit mereka secara efisien dan gratis.</b>
+         Anda cukup memasukkan tautan video TikTok ke dalam kolom yang tersedia, dan alat ini akan menampilkan opsi untuk mengunduh dalam format MP4 (video) atau MP3 (audio).
+     </b>
+ 
+ </div>
+
+ <!-- Contact Section -->
+ <div id="contact" class="contact-section container">
+     <h2>Contact</h2>
+     <ul class="contact-list">
+   <li> <i class="fas fa-envelope icon"></i> <a href="mfarisstore393@gmail.com" target="_blank">hubungi kami lewat Email</a> </li>
+     <p>
+         
+         Kami juga tersedia di media sosial untuk memberikan pembaruan terbaru dan menerima masukan Anda:
+         <li> <i class="fab fa-whatsapp icon"></i> <a href="https://wa.me/6288297877862" target="_blank">Whatsapp</a> </li> <li> <i class="fab fa-tiktok icon"></i> <a href="https://tiktok.com/@rizz_satoru" target="_blank">TikTok</a> </li>
+     </p>
+ </div>
+     <footer> <p>© 2025 Faris. <a href="#" class="nav-link">About</a> <a href="#" class="nav-link">Contact</a></p> </footer>
