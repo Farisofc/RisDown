@@ -48,8 +48,7 @@ document.getElementById('searchButton').addEventListener('click', function () {
                 document.getElementById('downloadVideoButton').addEventListener('click', function () {
                     const downloadVideo = document.createElement('a');
                     downloadVideo.href = tik.result.data.hdplay;
-                    downloadVideo.download = `tiktok-video.mp4`;
-                    downloadVideo.click();
+                    downloadVideo.download = `Snaptikris.mp4`;
                 });
 
                 // Tambahkan event listener untuk tombol download audio
@@ -57,7 +56,6 @@ document.getElementById('searchButton').addEventListener('click', function () {
                     const downloadAudio = document.createElement('a');
                     downloadAudio.href = tik.result.data.music_info.play;
                     downloadAudio.download = `tiktok-audio.mp3`;
-                    downloadAudio.click();
                 });
 
                 // Tambahkan event listener untuk tombol download thumbnail
@@ -65,7 +63,6 @@ document.getElementById('searchButton').addEventListener('click', function () {
                     const downloadImage = document.createElement('a');
                     downloadImage.href = tik.result.data.origin_cover;
                     downloadImage.download = `tiktok-thumbnail.jpg`;
-                    downloadImage.click();
                 });
 
                 resultsContainer.style.display = 'block';
