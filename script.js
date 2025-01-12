@@ -1,3 +1,4 @@
+// Dark mode toggle functionality
         document.getElementById('toggleButton').addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
             const icon = document.getElementById('toggleButton');
