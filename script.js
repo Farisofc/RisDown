@@ -45,7 +45,7 @@ document.getElementById('Region').textContent = `Region: ${tik.result.data.regio
                        // Trigger Autodownload (MP4 Video)
                 document.getElementById('downloadButton').href = tik.data.urls;
                 const downloadVideo = document.getElementById('downloadButton');
-                downloadVideo.click();  // Simulasi klik untuk unduhan otomatis video
+                // Simulasi klik untuk unduhan otomatis video
                 
                 // Optional: Trigger Autodownload (MP3 Audio)
                 document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;
