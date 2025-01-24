@@ -22,6 +22,9 @@
  
                 fetch(`https://website-restapii.vercel.app/tiktok?url=${url}&key=farisofc`)
                     .then(response => response.json())
+                    .then(data => {
+                     fetch(`https://website-restapii.vercel.app/tiktokdll?url=${url}&key=farisofc`)
+                    .then(response => response.json())
                     .then(tik => {
                         // Set video details
 document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;   
@@ -36,14 +39,14 @@ document.getElementById('Region').textContent = `Region: ${tik.result.data.regio
 
                         // Set video player
                         const videoPlayer = document.getElementById('videoPlayer');
-                        videoPlayer.src = tik.result.nowm;
+                        videoPlayer.src = tik.result.data.play;
                         videoPlayer.style.display = 'block';
                         videoPlayer.load();
                         videoPlayer.play();
 
                         // Set download links
                        // Trigger Autodownload (MP4 Video)
-                document.getElementById('downloadButton').href = tik.result.nowm;
+                document.getElementById('downloadButton').href = data.result.nowm;
                 const downloadVideo = document.getElementById('downloadButton');
                      downloadVideo.click();
                 // Simulasi klik untuk unduhan otomatis video
