@@ -46,13 +46,13 @@ document.getElementById('Region').textContent = `Region: ${tik.result.data.regio
                        // Trigger Autodownload (MP4 Video)
                 document.getElementById('downloadButton').href = data.result.nowm;
                 const downloadVideo = document.getElementById('downloadButton');
-                     downloadVideo.click();
+                     
                 // Simulasi klik untuk unduhan otomatis video
                 
                 // Optional: Trigger Autodownload (MP3 Audio)
                 document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;
                 const downloadAudio = document.getElementById('downloadAudioButton');
-                downloadAudio.click();  // Simulasi klik untuk unduhan otomatis audio
+                // Simulasi klik untuk unduhan otomatis audio
 
 
 const mp3Title = tik.result.data.music_info.title;
