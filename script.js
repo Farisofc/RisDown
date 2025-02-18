@@ -26,7 +26,7 @@
                      
                         // Set video details
 document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;   
-                     document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.author}`;
+                     document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.author.nickname}`;
                         document.getElementById('videoDescription').textContent = `Description: ${tik.result.data.title}`;
 
                         // Show and resize the thumbnail
