@@ -30,7 +30,7 @@ document.getElementById('Region').textContent = `Region: ${data.result.data.regi
                         document.getElementById('videoDescription').textContent = `Description: ${data.result.title}`;
 
                         // Show and resize the thumbnail
-                        const thumbnail = tik.result.data.author.avatar;
+                        const thumbnail = data.result.data.author.avatar;
                         const videoThumbnail = document.getElementById('videoThumbnail');
                         videoThumbnail.src = thumbnail;
                         videoThumbnail.style.display = 'block';
@@ -60,7 +60,7 @@ const mp3Title = data.result.data.music_info.title;
                 document.getElementById('mp3Title').textContent = `Download MP3: ${mp3Title}`;
                 document.getElementById('downloadImageButton').addEventListener('click', function() {
     const thumbnail = document.getElementById('videoThumbnail');
-    const imageUrl = dara.result.data.origin_cover; // Mendapatkan URL gambar
+    const imageUrl = data.result.data.origin_cover; // Mendapatkan URL gambar
 
     // Membuat elemen link sementara untuk mengunduh gambar
     const link = document.createElement('a');
