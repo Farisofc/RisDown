@@ -22,45 +22,45 @@
  
                 fetch(`https://website-restapii.vercel.app/tiktokdll?url=${url}&key=farisofc`)
                     .then(response => response.json())
-                    .then(data => {
+                    .then(tik => {
                      
                         // Set video details
-document.getElementById('Region').textContent = `Region: ${data.result.data.region}`;   
-                     document.getElementById('videoAuthor').textContent = `Author: ${data.result.authot}`;
-                        document.getElementById('videoDescription').textContent = `Description: ${data.result.title}`;
+document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;   
+                     document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.authot}`;
+                        document.getElementById('videoDescription').textContent = `Description: ${tik.result.data.title}`;
 
                         // Show and resize the thumbnail
-                        const thumbnail = data.result.data.author.avatar;
+                        const thumbnail = tik.result.data.author.avatar;
                         const videoThumbnail = document.getElementById('videoThumbnail');
                         videoThumbnail.src = thumbnail;
                         videoThumbnail.style.display = 'block';
 
                         // Set video player
                         const videoPlayer = document.getElementById('videoPlayer');
-                        videoPlayer.src = data.result.nowm;
+                        videoPlayer.src = tik.result.data.nowm;
                         videoPlayer.style.display = 'block';
                         
                         
 
                         // Set download links
                        // Trigger Autodownload (MP4 Video)
-                document.getElementById('downloadButton').href = data.result.nowm;
+                document.getElementById('downloadButton').href = tik.result.data.nowm;
                 const downloadVideo = document.getElementById('downloadButton');
                      
                 // Simulasi klik untuk unduhan otomatis video
                 
                 // Optional: Trigger Autodownload (MP3 Audio)
-                document.getElementById('downloadAudioButton').href = data.result.data.music_info.play;
+                document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;
                 const downloadAudio = document.getElementById('downloadAudioButton');
                 // Simulasi klik untuk unduhan otomatis audio
 
 
-const mp3Title = data.result.data.music_info.title;
+const mp3Title = tik.result.data.music_info.title;
                 document.getElementById('mp3Title').style.display = 'block';
                 document.getElementById('mp3Title').textContent = `Download MP3: ${mp3Title}`;
                 document.getElementById('downloadImageButton').addEventListener('click', function() {
     const thumbnail = document.getElementById('videoThumbnail');
-    const imageUrl = data.result.data.origin_cover; // Mendapatkan URL gambar
+    const imageUrl = tik.result.data.origin_cover; // Mendapatkan URL gambar
 
     // Membuat elemen link sementara untuk mengunduh gambar
     const link = document.createElement('a');
