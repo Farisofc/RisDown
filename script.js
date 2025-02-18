@@ -39,7 +39,7 @@ document.getElementById('Region').textContent = `Region: ${data.result.data.regi
                         const videoPlayer = document.getElementById('videoPlayer');
                         videoPlayer.src = data.result.nowm;
                         videoPlayer.style.display = 'block';
-                        videoPlayer.click();
+                        
                         
 
                         // Set download links
@@ -50,7 +50,7 @@ document.getElementById('Region').textContent = `Region: ${data.result.data.regi
                 // Simulasi klik untuk unduhan otomatis video
                 
                 // Optional: Trigger Autodownload (MP3 Audio)
-                document.getElementById('downloadAudioButton').href = tik.result.data.music_info.play;
+                document.getElementById('downloadAudioButton').href = data.result.data.music_info.play;
                 const downloadAudio = document.getElementById('downloadAudioButton');
                 // Simulasi klik untuk unduhan otomatis audio
 
@@ -60,7 +60,7 @@ const mp3Title = data.result.data.music_info.title;
                 document.getElementById('mp3Title').textContent = `Download MP3: ${mp3Title}`;
                 document.getElementById('downloadImageButton').addEventListener('click', function() {
     const thumbnail = document.getElementById('videoThumbnail');
-    const imageUrl = tik.result.data.origin_cover; // Mendapatkan URL gambar
+    const imageUrl = dara.result.data.origin_cover; // Mendapatkan URL gambar
 
     // Membuat elemen link sementara untuk mengunduh gambar
     const link = document.createElement('a');
