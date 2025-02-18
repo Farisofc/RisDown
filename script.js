@@ -20,12 +20,12 @@
  } else {
  errorMessage.style.display = 'none';
  
-                fetch(`https://website-restapii.vercel.app/tiktok?url=${url}&key=farisofc`)
+                fetch(`https://website-restapii.vercel.app/tiktokdll?url=${url}&key=farisofc`)
                     .then(response => response.json())
                     .then(data => {
                      
                         // Set video details
-document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;   
+document.getElementById('Region').textContent = `Region: ${data.result.data.region}`;   
                      document.getElementById('videoAuthor').textContent = `Author: ${data.result.authot}`;
                         document.getElementById('videoDescription').textContent = `Description: ${data.result.title}`;
 
@@ -55,7 +55,7 @@ document.getElementById('Region').textContent = `Region: ${tik.result.data.regio
                 // Simulasi klik untuk unduhan otomatis audio
 
 
-const mp3Title = tik.result.data.music_info.title;
+const mp3Title = data.result.data.music_info.title;
                 document.getElementById('mp3Title').style.display = 'block';
                 document.getElementById('mp3Title').textContent = `Download MP3: ${mp3Title}`;
                 document.getElementById('downloadImageButton').addEventListener('click', function() {
