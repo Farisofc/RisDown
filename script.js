@@ -26,7 +26,7 @@
                      
                         // Set video details
 document.getElementById('Region').textContent = `Region: ${tik.result.data.region}`;   
-                     document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.authot}`;
+                     document.getElementById('videoAuthor').textContent = `Author: ${tik.result.data.author}`;
                         document.getElementById('videoDescription').textContent = `Description: ${tik.result.data.title}`;
 
                         // Show and resize the thumbnail
@@ -37,7 +37,7 @@ document.getElementById('Region').textContent = `Region: ${tik.result.data.regio
 
                         // Set video player
                         const videoPlayer = document.getElementById('videoPlayer');
-                        videoPlayer.src = tik.result.data.nowm;
+                        videoPlayer.src = tik.result.data.play;
                         videoPlayer.style.display = 'block';
                         
                         
